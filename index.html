@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Agro Forte | Futuro Sustentável</title>
+    <!-- Font Awesome 6 (Free Icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts: Poppins + Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fafef7;
+            color: #1a2e1f;
+            scroll-behavior: smooth;
+            line-height: 1.5;
+        }
+
+        h1, h2, h3, .logo, .nav-links a {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header / Navbar */
+        .navbar {
+            background: #ffffffdd;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 4px 20px rgba(0,32,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #cfe6cf;
+        }
+
+        .nav-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 1.7rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #2b6e2f, #88c43d);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            letter-spacing: -0.5px;
+        }
+
+        .logo i {
+            color: #4c9f3d;
+            background: none;
+            -webkit-background-clip: unset;
+            background-clip: unset;
+            margin-right: 6px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            font-weight: 600;
+            color: #1f3b21;
+            transition: 0.2s;
+            font-size: 1rem;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: #3b9e2c;
+            border-bottom: 2px solid #3b9e2c;
+            padding-bottom: 4px;
+        }
+
+        /* hero section */
+        .hero {
+            background: linear-gradient(112deg, #eef6e6 0%, #d9e9cf 100%);
+            padding: 3.5rem 0 4rem;
+            border-radius: 0 0 40px 40px;
+            margin-bottom: 2rem;
+        }
+
+        .hero-grid {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        .hero-text {
+            flex: 1.2;
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+            color: #144d1b;
+        }
+
+        .hero-text .highlight {
+            color: #3c9e2e;
+            border-left: 5px solid #3c9e2e;
+            padding-left: 1rem;
+            margin: 1.2rem 0;
+            font-weight: 500;
+            font-size: 1.2rem;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 2rem 0 0.5rem;
+        }
+
+        .btn-primary {
+            background: #2c6e2f;
+            color: white;
+            border: none;
+            padding: 12px 32px;
+            border-radius: 40px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+
+        .btn-primary:hover {
+            background: #1f5522;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 18px rgba(44,110,47,0.2);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #2c6e2f;
+            color: #2c6e2f;
+            padding: 10px 28px;
+            border-radius: 40px;
+            font-weight: 600;
+            transition: 0.2s;
+            text-decoration: none;
+        }
+
+        .btn-outline:hover {
+            background: #2c6e2f10;
+            transform: translateY(-2px);
+        }
+
+        .hero-stats {
+            flex: 0.8;
+            background: #ffffffcc;
+            backdrop-filter: blur(4px);
+            padding: 1.8rem;
+            border-radius: 2rem;
+            box-shadow: 0 12px 24px rgba(0,0,0,0.05);
+        }
+
+        .stat-item {
+            margin: 1.2rem 0;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #2c6e2f;
+        }
+
+        /* seção equilibrio */
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            text-align: center;
+            margin: 3rem 0 1rem;
+            color: #1e4620;
+        }
+
+        .section-sub {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            color: #4a5b47;
+        }
+
+        .cards-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: center;
+            margin: 2rem 0;
+        }
+
+        .card {
+            background: white;
+            border-radius: 28px;
+            padding: 2rem 1.5rem;
+            width: 280px;
+            box-shadow: 0 15px 30px rgba(0, 20, 0, 0.05);
+            transition: 0.25s ease;
+            text-align: center;
+            border: 1px solid #e1f0da;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 35px rgba(58, 112, 36, 0.12);
+        }
+
+        .card i {
+            font-size: 2.8rem;
+            color: #52b43b;
+            margin-bottom: 1rem;
+        }
+
+        .card h3 {
+            margin-bottom: 0.8rem;
+            font-size: 1.5rem;
+        }
+
+        /* feature destaque */
+        .feature-banner {
+            background: linear-gradient(120deg, #1f4123, #2e6b2c);
+            border-radius: 48px;
+            padding: 2rem;
+            color: white;
+            margin: 3rem 0;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .feature-banner h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .feature-banner p {
+            max-width: 500px;
+        }
+
+        /* prÁticas verdes */
+        .practices {
+            background: #f0f7eb;
+            border-radius: 48px;
+            padding: 2.5rem 2rem;
+            margin: 3rem 0;
+        }
+
+        .flex-practices {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: space-between;
+            margin-top: 1.5rem;
+        }
+
+        .practice-item {
+            flex: 1;
+            min-width: 200px;
+            background: white;
+            padding: 1.2rem;
+            border-radius: 24px;
+            text-align: center;
+        }
+
+        /* impacto sustentável */
+        .impact-stats {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 2rem;
+            background: #ffffff;
+            border-radius: 48px;
+            padding: 2rem;
+            margin: 2.5rem 0;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.03);
+        }
+
+        .impact-card {
+            text-align: center;
+        }
+
+        /* footer */
+        footer {
+            background: #102e14;
+            color: #cfe3ca;
+            padding: 3rem 0 2rem;
+            margin-top: 4rem;
+            border-radius: 32px 32px 0 0;
+        }
+
+        .footer-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        .footer-links a {
+            color: #cfe3ca;
+            text-decoration: none;
+            margin-right: 1.5rem;
+            transition: 0.2s;
+        }
+
+        .footer-links a:hover {
+            color: #b3e69b;
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 0.85rem;
+            border-top: 1px solid #2e5532;
+            padding-top: 1.5rem;
+        }
+
+        @media (max-width: 780px) {
+            .nav-flex {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .hero-text h1 {
+                font-size: 2.2rem;
+            }
+            .section-title {
+                font-size: 1.8rem;
+            }
+        }
+
+        button, .btn-primary, .btn-outline {
+            cursor: pointer;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.7);
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+        .modal-content {
+            background: white;
+            max-width: 450px;
+            padding: 2rem;
+            border-radius: 2rem;
+            text-align: center;
+            animation: fadeUp 0.3s;
+        }
+        @keyframes fadeUp {
+            from { transform: translateY(30px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .close-modal {
+            background: #2c6e2f;
+            border: none;
+            color: white;
+            padding: 10px 22px;
+            border-radius: 30px;
+            margin-top: 1rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="container nav-flex">
+        <div class="logo">
+            <i class="fas fa-seedling"></i> AgroForteSustentável
+        </div>
+        <ul class="nav-links">
+            <li><a href="#" class="active" id="nav-home">Início</a></li>
+            <li><a href="#equilibrio">Equilíbrio</a></li>
+            <li><a href="#praticas">Práticas</a></li>
+            <li><a href="#impacto">Impacto</a></li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container hero-grid">
+            <div class="hero-text">
+                <h1>Agro Forte, <br> Futuro <span style="color:#3c9e2e;">Sustentável</span></h1>
+                <div class="highlight">
+                    <i class="fas fa-balance-scale"></i> Equilíbrio entre produção e meio ambiente
+                </div>
+                <p>Produzir mais com menos impacto: a nova era do campo inteligente que nutre o mundo e preserva o planeta.</p>
+                <div class="btn-group">
+                    <a href="#equilibrio" class="btn-primary"><i class="fas fa-leaf"></i> Explorar soluções</a>
+                    <button id="openModalBtn" class="btn-outline"><i class="fas fa-chart-line"></i> Saber mais</button>
+                </div>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item"><span class="stat-number">+35%</span> <br> produtividade com técnicas regenerativas</div>
+                <div class="stat-item"><span class="stat-number">-42%</span> <br> redução de emissões por hectare (última década)</div>
+                <div class="stat-item"><span class="stat-number">15M ha</span> <br> em sistemas de integração lavoura-pecuária-floresta</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Seção Equilíbrio -->
+    <div id="equilibrio" class="container">
+        <h2 class="section-title">⚖️ Produção & Natureza em Sintonia</h2>
+        <p class="section-sub">O agronegócio brasileiro mostra que é possível ser protagonista mundial em alimentos e, ao mesmo tempo, guardião do meio ambiente.</p>
+        <div class="cards-grid">
+            <div class="card">
+                <i class="fas fa-tractor"></i>
+                <h3>ILPF</h3>
+                <p>Integração Lavoura-Pecuária-Floresta: recuperação de pastagens e sequestro de carbono.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-water"></i>
+                <h3>Uso racional da água</h3>
+                <p>Irrigação de precisão e conservação de nascentes, garantindo segurança hídrica.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-biohazard"></i>
+                <h3>Bioinsumos</h3>
+                <p>Redução de químicos, controle biológico e solo vivo: mais saúde e produtividade.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Destaque especial -->
+    <div class="container">
+        <div class="feature-banner">
+            <div>
+                <h3><i class="fas fa-charging-station"></i> Carbono neutro até 2035?</h3>
+                <p>O setor agropecuário investe em tecnologias de baixo carbono e certificação de produtos sustentáveis.</p>
+            </div>
+            <i class="fas fa-globe-americas" style="font-size: 3rem; opacity: 0.9;"></i>
+        </div>
+    </div>
+
+    <!-- Práticas sustentáveis -->
+    <div id="praticas" class="container practices">
+        <h2 class="section-title" style="margin-top: 0;">🌱 Práticas que Transformam o Campo</h2>
+        <div class="flex-practices">
+            <div class="practice-item"><i class="fas fa-seedling" style="font-size: 2rem; color:#449e34;"></i><h4>Plantio Direto</h4><small>Conservação do solo, aumento de matéria orgânica.</small></div>
+            <div class="practice-item"><i class="fas fa-tree" style="font-size: 2rem; color:#449e34;"></i><h4>Restauração de Áreas</h4><small>Recuperação de APP e reserva legal com espécies nativas.</small></div>
+            <div class="practice-item"><i class="fas fa-solar-panel" style="font-size: 2rem; color:#449e34;"></i><h4>Energia Limpa</h4><small>Biogás, biodigestores e energia solar nas fazendas.</small></div>
+            <div class="practice-item"><i class="fas fa-charging-station" style="font-size: 2rem; color:#449e34;"></i><h4>Agricultura Digital</h4><small>Sensoriamento remoto, inteligência artificial e drones.</small></div>
+        </div>
+    </div>
+
+    <!-- Impacto sustentável + indicadores -->
+    <div id="impacto" class="container">
+        <h2 class="section-title">📊 Impacto real: números da sustentabilidade</h2>
+        <div class="impact-stats">
+            <div class="impact-card"><i class="fas fa-chart-line" style="font-size: 2.4rem; color:#2c6e2f;"></i><h3>83%</h3><p>das propriedades rurais já adotam alguma prática sustentável (fonte: Embrapa)</p></div>
+            <div class="impact-card"><i class="fas fa-cloud-rain" style="font-size: 2.4rem; color:#2c6e2f;"></i><h3>1.5 bilhão</h3><p>toneladas de CO₂eq evitadas com o plano ABC+ em 10 anos.</p></div>
+            <div class="impact-card"><i class="fas fa-hand-holding-heart" style="font-size: 2.4rem; color:#2c6e2f;"></i><h3>+200%</h3><p>aumento da produção de grãos sem desmatamento adicional desde 2000.</p></div>
+        </div>
+    </div>
+
+    <!-- Chamada para ação final -->
+    <div class="container" style="text-align: center; margin: 2rem auto 1rem;">
+        <div style="background: #eef3ea; border-radius: 3rem; padding: 2.5rem 1.5rem;">
+            <i class="fas fa-hand-peace" style="font-size: 3rem; color:#3c9e2e;"></i>
+            <h3 style="font-size: 1.8rem; margin: 0.5rem 0;">O agro que alimenta o mundo e cuida da Terra</h3>
+            <p>Inovação, respeito ao ciclo natural e compromisso com as próximas gerações.</p>
+            <button id="openModalBtn2" class="btn-primary" style="margin-top: 1rem;"><i class="fas fa-envelope"></i> Receber boas práticas</button>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="container footer-grid">
+        <div>
+            <div class="logo" style="color:white; background: none; -webkit-background-clip: unset; color:#cfe6c5;"><i class="fas fa-tractor"></i> Agro Forte + Futuro Sustentável</div>
+            <p style="margin-top: 0.5rem;">Equilíbrio que gera prosperidade.</p>
+        </div>
+        <div class="footer-links">
+            <a href="#">Sobre</a>
+            <a href="#">Pesquisa</a>
+            <a href="#">Parceiros</a>
+            <a href="#">Contato sustentável</a>
+        </div>
+        <div>
+            <i class="fab fa-instagram"></i>  <i class="fab fa-linkedin"></i>  <i class="fab fa-youtube"></i>
+            <p style="margin-top: 0.5rem;">#AgroForteSustentável</p>
+        </div>
+    </div>
+    <div class="container copyright">
+        &copy; 2026 Agro Forte, Futuro Sustentável - Compromisso com a Década da Restauração dos Ecossistemas.
+    </div>
+</footer>
+
+<!-- Modal / Popup -->
+<div id="infoModal" class="modal">
+    <div class="modal-content">
+        <i class="fas fa-globe" style="font-size: 3rem; color:#2e8b2c;"></i>
+        <h3 style="margin: 1rem 0;">Balanço entre produção e meio ambiente</h3>
+        <p>O agro sustentável é uma realidade: restauração ecológica, economia circular no campo e certificações verdes ampliam mercados e protegem a biodiversidade. O Brasil lidera sistemas agroflorestais e rastreabilidade ambiental.</p>
+        <button class="close-modal" id="closeModalBtn">Entendi, seguir para o futuro</button>
+    </div>
+</div>
+
+<script>
+    // Modal functionality
+    const modal = document.getElementById('infoModal');
+    const openBtn = document.getElementById('openModalBtn');
+    const openBtn2 = document.getElementById('openModalBtn2');
+    const closeBtn = document.getElementById('closeModalBtn');
+
+    function openModal() {
+        modal.style.display = 'flex';
+    }
+    function closeModal() {
+        modal.style.display = 'none';
+    }
+    if(openBtn) openBtn.addEventListener('click', openModal);
+    if(openBtn2) openBtn2.addEventListener('click', openModal);
+    if(closeBtn) closeBtn.addEventListener('click', closeModal);
+    window.addEventListener('click', (e) => {
+        if(e.target === modal) closeModal();
+    });
+
+    // Smooth scroll for anchor links + active nav highlight
+    const navLinks = document.querySelectorAll('.nav-links a');
+    const sections = ['equilibrio', 'praticas', 'impacto'];
+    
+    function setActiveNav() {
+        let scrollPos = window.scrollY + 120;
+        let currentSection = 'home';
+        for(let sectionId of sections) {
+            const section = document.getElementById(sectionId);
+            if(section && section.offsetTop <= scrollPos && section.offsetTop + section.offsetHeight > scrollPos) {
+                currentSection = sectionId;
+                break;
+            }
+        }
+        navLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            link.classList.remove('active');
+            if(href === '#equilibrio' && currentSection === 'equilibrio') link.classList.add('active');
+            else if(href === '#praticas' && currentSection === 'praticas') link.classList.add('active');
+            else if(href === '#impacto' && currentSection === 'impacto') link.classList.add('active');
+            else if(href === '#' && currentSection === 'home') link.classList.add('active');
+        });
+    }
+
+    window.addEventListener('scroll', setActiveNav);
+    window.addEventListener('load', setActiveNav);
+    
+    // para cliques nos links com rolagem suave
+    document.querySelectorAll('.nav-links a, .btn-primary[href="#equilibrio"], .btn-outline[href="#equilibrio"]').forEach(anchor => {
+        if(anchor.getAttribute('href') && anchor.getAttribute('href').startsWith('#')) {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substring(1);
+                if(targetId === '') {
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                } else {
+                    const targetElement = document.getElementById(targetId);
+                    if(targetElement) {
+                        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                }
+            });
+        }
+    });
+
+    // pegar também o botão "explorar soluções" hero
+    const exploreBtn = document.querySelector('.btn-primary[href="#equilibrio"]');
+    if(exploreBtn) {
+        exploreBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            document.getElementById('equilibrio').scrollIntoView({ behavior: 'smooth' });
+        });
+    }
+
+    // Animação sutil nos cards ao aparecer (não obrigatório, mas elegante)
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if(entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0px)';
+            }
+        });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.card, .practice-item, .impact-card').forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity 0.6s ease, transform 0.5s ease';
+        observer.observe(el);
+    });
+    // já visíveis no load?
+    setTimeout(() => {
+        document.querySelectorAll('.card, .practice-item, .impact-card').forEach(el => {
+            const rect = el.getBoundingClientRect();
+            if(rect.top < window.innerHeight-100) {
+                el.style.opacity = '1';
+                el.style.transform = 'translateY(0px)';
+            }
+        });
+    }, 200);
+</script>
+</body>
+</html>
